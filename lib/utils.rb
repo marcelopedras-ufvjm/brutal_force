@@ -1,7 +1,7 @@
 require 'net/ssh'
 
 class Utils
-  def self.test_password(host,user,password)
+  def test_password(host,user,password)
     begin
       Net::SSH.start(host, user,
                      :password     => password,
@@ -11,5 +11,24 @@ class Utils
     rescue Exception => e
       return false
     end
+  end
+
+  def to_ranges(total, parts)
+    intervals = total/parts
+
+    i=0
+    j=intervals-1
+
+    buffer=[]
+    while(j < total)
+      if (j+intervals > total)
+        #fim
+        j=total -1
+      end
+      buffer.push(i..j)
+      i=j+1
+      j=j+intervals
+    end
+    buffer
   end
 end

@@ -21,4 +21,31 @@ max_lenght = 10
 # f.puts AcGenerators.arrangement(dictionary)
 # f.close
 
+f=File.open('test.txt','w')
+(1..10).each do |test|
+  n=test
 
+  start=Time.now
+  AcGenerators.new.combination_mask_thread(n)
+  finish=Time.now
+  diff = finish - start
+  puts "Instance #{n}"
+  puts 'With thread'
+  puts diff
+  f.puts "Instance #{n}"
+  f.puts 'With thread'
+  f.puts diff
+
+
+  start=Time.now
+  AcGenerators.new.combination_mask(n)
+  finish=Time.now
+  diff = finish - start
+
+  puts 'Without thread'
+  puts diff
+  f.puts 'Without thread'
+  f.puts diff
+  f.puts '---------------------'
+
+end
