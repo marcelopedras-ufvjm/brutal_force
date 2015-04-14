@@ -1,4 +1,5 @@
 require 'net/ssh'
+require 'facter'
 
 class Utils
   def self.test_password(host,user,password)
@@ -30,5 +31,9 @@ class Utils
       j=j+intervals
     end
     buffer
+  end
+
+  def self.get_processors_amount
+    Facter.value('processors')['count']
   end
 end
