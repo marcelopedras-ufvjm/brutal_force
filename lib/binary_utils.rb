@@ -1,17 +1,17 @@
 class BinaryUtils
-  def to_binary(num_bits, number)
+  def self.to_binary(num_bits, number)
     ("%0#{num_bits}b" % number)
   end
 
-  def min_bits_to_represent(number)
+  def self.min_bits_to_represent(number)
     Math.log2(number).to_i + 1
   end
 
-  def max_number_for_bits(amount_bits)
+  def self.max_number_for_bits(amount_bits)
     2**amount_bits
   end
 
-  def apply_mask(string_mask,array_string)
+  def self.apply_mask(string_mask,array_string)
     buffer = []
     string_mask.each_char.with_index do |b,i|
       if b == '1'
@@ -19,5 +19,13 @@ class BinaryUtils
       end
     end
     buffer
+  end
+
+  def self.count_ones(string_mask)
+    string_mask.gsub('0','').length
+  end
+
+  def self.count_zeros(string_mask)
+    string_mask.gsub('1','').length
   end
 end

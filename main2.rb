@@ -9,43 +9,44 @@ dictionary = %w"lab ict 2 sala 255 bct # - _ s"
 min_lenght = 5
 max_lenght = 10
 
-# sum = 0
-# (4..dictionary.count).each do |x|
-#   sum+=AcMath.arrangement(dictionary.count,x)
-#end
+group = %w"a b c d e f g h i j k l m n o p"
 
-#puts sum
-
-#puts AcMath.arrangement(dictionary.count)
-# f=File.open('result.txt','w')
-# f.puts AcGenerators.arrangement(dictionary)
-# f.close
-
-f=File.open('test.txt','w')
-(1..10).each do |test|
-  n=test
-
-  start=Time.now
-  AcGenerators.new.combination_mask_thread(n)
-  finish=Time.now
-  diff = finish - start
-  puts "Instance #{n}"
-  puts 'With thread'
-  puts diff
-  f.puts "Instance #{n}"
-  f.puts 'With thread'
-  f.puts diff
+start=Time.now
+AcGenerators.combination(group)
+finish=Time.now
+diff = finish - start
+puts diff
 
 
-  start=Time.now
-  AcGenerators.new.combination_mask(n)
-  finish=Time.now
-  diff = finish - start
 
-  puts 'Without thread'
-  puts diff
-  f.puts 'Without thread'
-  f.puts diff
-  f.puts '---------------------'
-
-end
+#
+# f=File.open('test.txt','w')
+# (5..15).each do |test|
+#   p=test
+#   n=20
+#
+#
+#   start=Time.now
+#   AcGenerators.combination_mask_thread(n,p)
+#   finish=Time.now
+#   diff = finish - start
+#   puts "Instance #{p}"
+#   puts 'With thread'
+#   puts diff
+#   f.puts "Instance #{p}"
+#   f.puts 'With thread'
+#   f.puts diff
+#
+#
+#   start=Time.now
+#   AcGenerators.combination_mask(n,p)
+#   finish=Time.now
+#   diff = finish - start
+#
+#   puts 'Without thread'
+#   puts diff
+#   f.puts 'Without thread'
+#   f.puts diff
+#   f.puts '---------------------'
+#
+# end

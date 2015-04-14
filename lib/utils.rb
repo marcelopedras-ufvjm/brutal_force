@@ -1,7 +1,7 @@
 require 'net/ssh'
 
 class Utils
-  def test_password(host,user,password)
+  def self.test_password(host,user,password)
     begin
       Net::SSH.start(host, user,
                      :password     => password,
@@ -13,7 +13,7 @@ class Utils
     end
   end
 
-  def to_ranges(total, parts)
+  def self.to_ranges(total, parts)
     intervals = total/parts
 
     i=0

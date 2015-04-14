@@ -1,0 +1,14 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    CFPropertyList (2.2.8)
+    facter (2.4.3)
+      CFPropertyList (~> 2.2.6)
+    net-ssh (2.9.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  facter
+  net-ssh

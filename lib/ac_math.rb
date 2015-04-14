@@ -1,5 +1,5 @@
 class AcMath
-  def factorial(n)
+  def self.factorial(n)
     if n == 0
       return 1
     end
@@ -8,7 +8,7 @@ class AcMath
     end
   end
 
-  def arrangement(n,p=nil)
+  def self.arrangement(n,p=nil)
     if p
       factorial(n)/factorial(n-p)
     else
@@ -20,7 +20,7 @@ class AcMath
     end
   end
 
-  def combination(n,p=nil)
+  def self.combination(n,p=nil)
     if p
       factorial(n)/(factorial(p)*(factorial(n-p)))
     else
